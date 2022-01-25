@@ -2,18 +2,82 @@ html {
   font-family: var(--font-family-sans);
   font-size: var(--font-base-size);
   line-height: var(--font-base-line-height);
+  scrollbar-width: thin;
+  scrollbar-color: var(--ivory-green) var(--white);
+  padding: 0;
+  /**width: 900px;
+  margin: 0 auto;**/
+  overflow-x: hidden;
+  overflow: auto;
+  scrollbar-gutter: stable;
 }
 
 body {
   -webkit-font-smoothing: antialiased;
   background: var(--color-white);
   color: var(--color-black);
-  margin: 0;
 }
 
-html,
+/*html,
 body,
 body > div,
 body > div > div {
   height: 100%;
+}*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+a {
+  color: var(--black);
+  text-decoration-color: var(--red);
+  /* Chrome renders this weird with this font, so we turn it off */
+  text-decoration-skip-ink: none;
+}
+
+mark,
+.mark {
+  background: var(--yellow);
+  padding: 0 2px 2px 2px;
+  margin: 0;
+  display: inline;
+  line-height: 1;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--white);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--ivory-green);
+  border-radius: 6px;
+  border: 3px solid var(--white);
+}
+
+img {
+  max-width: 100%;
+}
+
+.amatic {
+  font-family: "Amatic";
+}
+
+.garamond {
+  font-family: Garamond;
+}
+
+.josefin {
+  font-family: JosefinSans;
+}
+
+.intro {
+  font-family: "AmaticBold";
+  letter-spacing: 0.8rem;
+  font-size: 5rem;
 }

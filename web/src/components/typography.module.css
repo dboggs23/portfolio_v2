@@ -1,11 +1,13 @@
-@import '../styles/custom-media.css';
-@import '../styles/custom-properties.css';
-
-
+@import "../styles/custom-media.css";
+@import "../styles/custom-properties.css";
 
 /*
  * Statically sized elements
  */
+
+body {
+  font-size: 1.2rem;
+}
 
 .title1 {
   font-size: var(--font-title1-size);
@@ -42,8 +44,6 @@
   line-height: var(--font-micro-line-height);
   text-transform: uppercase;
 }
-
-
 
 /*
  * Responsively sized elements

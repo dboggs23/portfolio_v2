@@ -1,5 +1,5 @@
-@import '../styles/custom-media.css';
-@import '../styles/custom-properties.css';
+@import "../styles/custom-media.css";
+@import "../styles/custom-properties.css";
 
 .root {
   position: relative;
@@ -111,4 +111,18 @@
 
 .showNav {
   display: block;
+}
+
+ul {
+  display: flex;
+
+  list-style-type: none;
+}
+
+ul > li {
+  margin-right: 10px;
+}
+
+a {
+  text-decoration: none;
 }

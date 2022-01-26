@@ -14,7 +14,7 @@ const HomeStyled = styled.div`
   animation: FadeIn 0.9s 1;
   width: 500px;
   margin: 0 auto;
-  font-family: "Garamond";
+  font-family: "EB Garamond";
 
   @keyframes FadeIn {
     0% {

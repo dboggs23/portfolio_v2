@@ -8,12 +8,17 @@
   font-family: "Amatic";
   src: url("../assets/AmaticSC-Regular.ttf");
 }
-@font-face {
-  /*serif*/
+/**@font-face {
+  
   font-family: "Garamond";
   src: url("../assets/EBGaramond-Regular.ttf");
   font-display: swap;
+}**/
+
+.garamond {
+  font-family: "Garamond";
 }
+
 @font-face {
   font-family: "AmaticBold";
   src: url("../assets/AmaticSC-Bold.ttf");

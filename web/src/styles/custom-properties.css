@@ -3,12 +3,12 @@
 :root {
   --font-family-sans: "Nunito", -apple-system, BlinkMacSystemFont, Roboto,
     sans-serif;
-  --handwritten: "Amatic";
+  /*--handwritten: "Amatic";
   --monospace: "JosefinSans";
   --handwritten-bold: "AmaticBold";
-  --serif: "Garamond";
+  --serif: "Garamond";*/
 
-  --color-black: #2e2e2e;
+  --color-black: #202123;
   --color-dark-gray: #32373e;
   --color-gray: #697a90;
   --color-light-gray: #b4bcc7;

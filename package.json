@@ -26,6 +26,8 @@
   },
   "dependencies": {
     "@fontsource/eb-garamond": "^4.5.1",
+    "@fontsource/josefin-sans": "^4.5.1",
+    "@fontsource/nunito": "^4.5.1",
     "babel-plugin-styled-components": "^2.0.2",
     "gatsby-plugin-styled-components": "^5.5.0",
     "styled-components": "^5.3.3"

@@ -12,6 +12,7 @@
   /*serif*/
   font-family: "Garamond";
   src: url("../assets/EBGaramond-Regular.ttf");
+  font-display: swap;
 }
 @font-face {
   font-family: "AmaticBold";

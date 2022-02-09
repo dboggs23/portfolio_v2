@@ -70,7 +70,7 @@ body {
 }
 
 .responsiveTitle1 {
-  font-weight: 600;
+  font-weight: 300;
   font-size: var(--font-title2-size);
   line-height: var(--font-title2-line-height);
   margin: 1rem 0 2rem;
@@ -104,10 +104,14 @@ body {
 }
 
 .responsiveTitle3 {
-  font-weight: 600;
+  font-weight: 200;
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
   margin: 1rem 0 0.5rem;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-line: solid;
+  text-decoration-color: var(--light-green);
 
   @media (--media-min-small) {
     font-size: var(--font-large-size);

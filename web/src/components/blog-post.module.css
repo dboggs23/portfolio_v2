@@ -2,10 +2,16 @@
 @import "../styles/custom-properties.css";
 
 .root {
+  font-size: var(--font-small-size);
+  /*font-family: "eb-garamond";*/
 }
 
 .title {
   composes: responsiveTitle1 from "./typography.module.css";
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-line: solid;
+  text-decoration-color: var(--light-green);
 }
 
 .mainImage {
@@ -22,7 +28,7 @@
     width: 100%;
     height: 100%;
     vertical-align: top;
-    object-fit: cover;
+    object-fit: contain;
   }
 }
 
@@ -47,7 +53,7 @@
   }
 
   @nest & h2, & h3, & h4, & h5, & h6 {
-    font-weight: 600;
+    font-weight: 400;
   }
 
   @nest & figure {
@@ -66,7 +72,6 @@
 .publishedAt {
   composes: small from "./typography.module.css";
   margin: 2rem 0 3rem;
-  color: var(--color-gray);
 }
 
 .categories {
@@ -87,4 +92,7 @@
 .categoriesHeadline {
   composes: base from "./typography.module.css";
   margin: 0.5rem 0 0;
+}
+
+p {
 }

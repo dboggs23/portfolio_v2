@@ -1,7 +1,7 @@
 @import "./typography.css";
 
 :root {
-  --font-family-sans: "Nunito", -apple-system, BlinkMacSystemFont, Roboto,
+  --font-family-sans: "nunito", -apple-system, BlinkMacSystemFont, Roboto,
     sans-serif;
   /*--handwritten: "Amatic";
   --monospace: "JosefinSans";
@@ -14,10 +14,10 @@
   --color-light-gray: #b4bcc7;
   --color-very-light-gray: #e7ebed;
   --color-white: #fff;
-  --color-accent: #5a9e6a;
+  --color-accent: #8ee4af;
 
   /* dark mode colors*/
-  --dark-blue: #0f2c67;
+  --dark-blue: #126e82;
   --light-yellow: #f4e185;
   --olive: #379683;
   --green: #5cdb95;
@@ -30,7 +30,7 @@
   --unit: 16;
   --font-micro-size: calc(10 / var(--unit) * 1rem); /* 10px */
   --font-micro-line-height: calc(12 / 10); /* 12px */
-  --font-small-size: calc(14 / var(--unit) * 1rem); /* 14px */
+  --font-small-size: calc(16 / var(--unit) * 1rem); /* 14px */
   --font-small-line-height: calc(21 / 14); /* 21px */
   --font-base-size: 1em; /* 16px */
   --font-base-line-height: calc(24 / var(--unit)); /* 24px */

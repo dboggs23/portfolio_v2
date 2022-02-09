@@ -7,6 +7,7 @@ import airplane from "../../assets/airplane.svg";
 import mountains from "../../assets/mountains.svg";
 import fleur from "../../assets/Fleur-de-lis-fill.svg";
 import { myContext } from "../../../provider";
+import { SocialIcon } from "react-social-icons";
 
 const IconsContainer = styled.div`
   .interests-container {
@@ -110,4 +111,23 @@ function FleurDeLis() {
   );
 }
 
-export { InterestsIcons, FleurDeLis };
+function Links() {
+  return (
+    <myContext.Consumer>
+      {(context) => (
+        <div className="contacts">
+          <SocialIcon
+            url="https://www.linkedin.com/in/dalton-boggs/"
+            bgColor={context.checked ? "white" : "black"}
+          />
+          <SocialIcon
+            url="https://github.com/dboggs23"
+            bgColor={context.checked ? "white" : "black"}
+          />
+        </div>
+      )}
+    </myContext.Consumer>
+  );
+}
+
+export { InterestsIcons, FleurDeLis, Links };

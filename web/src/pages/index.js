@@ -5,10 +5,11 @@ import SEO from "../components/seo";
 import { graphql } from "gatsby";
 import GraphQLErrorList from "../components/graphql-error-list";
 import styled from "styled-components";
-//import { SocialIcon } from "react-social-icons";
+
 import {
   InterestsIcons,
   FleurDeLis,
+  Links,
 } from "../components/ui-components/interests-icons";
 
 export const query = graphql`
@@ -72,6 +73,10 @@ const StyledContainer = styled.div`
     display: flex;
     align-items: flex-end;
   }
+  .contacts {
+    display: flex;
+    justify-content: space-between;
+  }
 `;
 
 function index({ data, errors }) {
@@ -113,13 +118,7 @@ function index({ data, errors }) {
           <InterestsIcons />
           <div className="icons-container">
             <h5>Some professional sort of links:</h5>
-            <div className="icons">
-              {/*<SocialIcon
-              url="https://www.linkedin.com/in/dalton-boggs/"
-              bgColor="black"
-            />
-            <SocialIcon url="https://github.com/dboggs23" bgColor="black" />*/}
-            </div>
+            <Links />
           </div>
         </StyledContainer>
       </HomeStyled>

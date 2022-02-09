@@ -44,6 +44,10 @@
   @media (hover: hover) {
     @nest .root:hover & {
       text-decoration: underline;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-decoration-line: solid;
+      text-decoration-color: var(--light-green);
     }
   }
 
@@ -67,5 +71,4 @@
 .date {
   font-size: var(--font-small-size);
   line-height: var(--font-micro-line-height);
-  color: var(--color-gray);
 }

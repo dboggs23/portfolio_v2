@@ -45,7 +45,7 @@ function BlogPost(props) {
                   : format(new Date(publishedAt), "MMMM Mo, yyyy")}
               </div>
             )}
-            {authors && <AuthorList items={authors} title="Authors" />}
+            {/*authors && <AuthorList items={authors} title="Authors" />}
             {categories && (
               <div className={styles.categories}>
                 <h3 className={styles.categoriesHeadline}>Categories</h3>
@@ -55,7 +55,7 @@ function BlogPost(props) {
                   ))}
                 </ul>
               </div>
-            )}
+                  )*/}
           </aside>
         </div>
       </Container>

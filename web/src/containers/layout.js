@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/layout";
 
@@ -12,7 +12,6 @@ const query = graphql`
 
 function LayoutContainer(props) {
   const [showNav, setShowNav] = useState(false);
-
   function handleShowNav() {
     setShowNav(true);
   }

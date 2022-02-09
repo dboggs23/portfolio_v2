@@ -14,7 +14,7 @@ html {
 
 body {
   -webkit-font-smoothing: antialiased;
-  background: var(--color-white);
+  /*background: var(--color-white);*/
   color: var(--color-black);
 }
 
@@ -63,22 +63,19 @@ body::-webkit-scrollbar-thumb {
 img {
   max-width: 100%;
 }
-/*
-.amatic {
-  font-family: "Amatic";
+
+html.dark {
+  background-color: var(--dark-blue);
+  color: var(--color-light-gray);
+}
+html.dark body {
+  background: var(--dark-blue);
+  color: var(--color-white);
+}
+html.dark .content {
+  background: var(--dark-blue);
 }
 
-.garamond {
-  font-family: Garamond;
+html.dark a {
+  color: white;
 }
-
-.josefin {
-  font-family: JosefinSans;
-}
-
-.intro {
-  font-family: "AmaticBold";
-  letter-spacing: 0.8rem;
-  font-size: 5rem;
-}
-*/

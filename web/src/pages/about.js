@@ -1,14 +1,14 @@
 import React from "react";
 import Layout from "../containers/layout";
-import Container from "../components/container";
+import SEO from "../components/seo";
+import { graphql } from "gatsby";
+import GraphQLErrorList from "../components/graphql-error-list";
 import styled from "styled-components";
 //import { SocialIcon } from "react-social-icons";
-import fleur from "../assets/Fleur-de-lis-fill.svg";
-import bike from "../assets/bike.svg";
-import books from "../assets/books.svg";
-import coffee from "../assets/coffee.svg";
-import airplane from "../assets/airplane.svg";
-import mountains from "../assets/mountains.svg";
+import {
+  InterestsIcons,
+  FleurDeLis,
+} from "../components/ui-components/interests-icons";
 
 const HomeStyled = styled.div`
   animation: FadeIn 0.9s 1;
@@ -61,92 +61,55 @@ const StyledContainer = styled.div`
     display: flex;
     align-items: flex-end;
   }
-  .interests-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin: 10px 0;
+`;
 
-    .bike,
-    .coffee,
-    .plane,
-    .mountains {
-      position: relative;
-    }
-    .bike {
-      top: 9px;
-    }
-    .coffee {
-      bottom: 2px;
-    }
-    .plane {
-      top: 1px;
-    }
-    .mountains {
-      top: 2px;
-    }
-  }
-  .interests {
-    width: 50px;
-  }
-  .icons {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  @media only screen and (max-width: 600px) {
-    .interests-container {
-      padding: 3px;
-    }
-    .interests {
-      width: 30px;
+export const query = graphql`
+  query AboutPageQuery {
+    site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
+      title
+      description
+      keywords
     }
   }
 `;
 
-function Home() {
+function Home({ data, errors }) {
+  if (errors) {
+    return (
+      <Layout>
+        <GraphQLErrorList errors={errors} />
+      </Layout>
+    );
+  }
+
+  const site = (data || {}).site;
+
+  if (!site) {
+    throw new Error(
+      'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
+    );
+  }
+
   return (
     <Layout>
+      <SEO
+        title={site.title}
+        description={site.description}
+        keywords={site.keywords}
+      />
       <HomeStyled>
         <StyledContainer>
           <h1>I'm Dalton.</h1>
           <div className="archHolder">
             <h3>I'm a developer who lives in St. Louis.</h3>
-            <img
-              src={fleur}
-              alt="A fleur de lis, which symbolizes the confluence of the Missouri and Mississippi rivers."
-            />
+            <FleurDeLis />
           </div>
           <h5>
             I don't make computers go beep-boop. They already do that. I build
             things that make interacting with them nicer.
           </h5>
-          <div>
-            <h5>Minimalist clip art that represent my interests:</h5>
-            <div className="interests-container">
-              <img
-                className="interests books"
-                src={books}
-                alt="A shelf of books. If this were a true representation it would be fuller and leaning to the left."
-              />
-              <img className="interests bike" src={bike} alt="A neat bicycle" />
-              <img
-                className="interests coffee"
-                src={coffee}
-                alt="A piping cup of joe"
-              />
-              <img
-                className="interests plane"
-                src={airplane}
-                alt="A jet airliner"
-              />
-              <img
-                className="interests mountains"
-                src={mountains}
-                alt="Idyllic mountains that remind me of those in Colorado. "
-              />
-            </div>
-          </div>
+
+          <InterestsIcons />
           <div className="icons-container">
             <h5>Some professional sort of links:</h5>
             <div className="icons">

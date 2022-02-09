@@ -1,24 +1,41 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Header from "./header";
-
 import "../styles/layout.css";
 import * as styles from "./layout.module.css";
+import { myContext } from "../../provider";
 
-const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => (
-  <div>
-    <Header
-      siteTitle={siteTitle}
-      onHideNav={onHideNav}
-      onShowNav={onShowNav}
-      showNav={showNav}
-    />
-    <div className={styles.content}>{children}</div>
-    {/*<footer className={styles.footer}>
-      <div className={styles.footerWrapper}>
-        <div className={styles.siteInfo}></div>
-      </div>
-</footer>*/}
-  </div>
-);
+const Layout = ({
+  children,
+  onHideNav,
+  onShowNav,
+  showNav,
+  siteTitle,
+  checked,
+  handleChecked,
+}) => {
+  return (
+    <myContext.Consumer>
+      {(context) => (
+        <div>
+          <Header
+            siteTitle={siteTitle}
+            onHideNav={onHideNav}
+            onShowNav={onShowNav}
+            showNav={showNav}
+            handleChecked={context.handleChecked}
+            checked={context.checked}
+          />
+
+          <div className={styles.content}>{children}</div>
+          {/*<footer className={styles.footer}>
+                <div className={styles.footerWrapper}>
+                  <div className={styles.siteInfo}></div>
+                </div>
+          </footer>*/}
+        </div>
+      )}
+    </myContext.Consumer>
+  );
+};
 
 export default Layout;

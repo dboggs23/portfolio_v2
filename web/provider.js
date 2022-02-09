@@ -16,6 +16,7 @@ const Provider = (props) => {
     },
     undefined,
     (prefersDark) => {
+      console.log(prefersDark);
       setChecked(prefersDark);
     }
   );
@@ -23,6 +24,7 @@ const Provider = (props) => {
   const [checked, setChecked] = useState(systemPrefersDark);
 
   useEffect(() => {
+    console.log("checked");
     if (checked) {
       document.documentElement.classList.add(DARK_CLASS);
     } else {

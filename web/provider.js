@@ -7,6 +7,7 @@ const Provider = (props) => {
   const DARK_CLASS = "dark";
 
   const handleChecked = (e) => {
+    console.log("change on click: ", e.target.checked);
     setChecked(e.target.checked);
   };
 
@@ -16,7 +17,7 @@ const Provider = (props) => {
     },
     undefined,
     (prefersDark) => {
-      console.log(prefersDark);
+      console.log("media query: ", prefersDark);
       setChecked(prefersDark);
     }
   );
@@ -24,7 +25,7 @@ const Provider = (props) => {
   const [checked, setChecked] = useState(systemPrefersDark);
 
   useEffect(() => {
-    console.log("checked");
+    console.log("use effect: ", checked);
     if (checked) {
       document.documentElement.classList.add(DARK_CLASS);
     } else {

@@ -7,7 +7,7 @@ const Provider = (props) => {
   const DARK_CLASS = "dark";
 
   const handleChecked = (e) => {
-    console.log("change on click: ", e.target.checked);
+    console.log(e.target);
     setChecked(e.target.checked);
   };
 
@@ -22,15 +22,24 @@ const Provider = (props) => {
   );
 
   const [checked, setChecked] = useState(systemPrefersDark);
-
+  console.log("in line checked status  ", checked);
   useEffect(() => {
-    console.log("use effect: ", checked);
+    console.log("check changed use effect  ", checked);
     if (checked) {
       document.documentElement.classList.add(DARK_CLASS);
     } else {
       document.documentElement.classList.remove(DARK_CLASS);
     }
   }, [checked]);
+
+  useEffect(() => {
+    console.log("page first ran use effect ", checked);
+    if (checked) {
+      document.documentElement.classList.add(DARK_CLASS);
+    } else {
+      document.documentElement.classList.remove(DARK_CLASS);
+    }
+  }, []);
 
   return (
     <myContext.Provider

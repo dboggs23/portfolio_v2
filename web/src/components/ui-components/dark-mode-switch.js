@@ -55,7 +55,7 @@ export default function DarkModeSwitch({ handleChecked, checked }) {
       borderRadius: 20 / 2,
     },
   };
-  console.log("render order: ", checked);
+
   return (
     <Switch
       onChange={handleChecked}

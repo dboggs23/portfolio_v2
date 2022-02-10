@@ -17,7 +17,6 @@ const Provider = (props) => {
     },
     undefined,
     (prefersDark) => {
-      console.log("media query: ", prefersDark);
       setChecked(prefersDark);
     }
   );

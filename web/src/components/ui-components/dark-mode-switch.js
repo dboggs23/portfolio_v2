@@ -55,7 +55,7 @@ export default function DarkModeSwitch({ handleChecked, checked }) {
       borderRadius: 20 / 2,
     },
   };
-
+  console.log("status from the component: ", checked);
   return (
     <Switch
       onChange={handleChecked}

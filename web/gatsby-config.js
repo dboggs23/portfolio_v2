@@ -14,7 +14,6 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-material-ui",
-
     {
       resolve: "gatsby-source-sanity",
       options: {
@@ -22,6 +21,12 @@ module.exports = {
         token: process.env.SANITY_READ_TOKEN,
         watchMode: !isProd,
         overlayDrafts: !isProd,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: `src/images/favicon.ico`,
       },
     },
   ],

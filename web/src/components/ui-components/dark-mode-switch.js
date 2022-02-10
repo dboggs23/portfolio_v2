@@ -6,7 +6,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 
-export default function DarkModeSwitch({ dark, handleChecked, checked }) {
+export default function DarkModeSwitch({ handleChecked, checked }) {
   const styles = {
     top: 7,
     margin: 0,
@@ -27,12 +27,12 @@ export default function DarkModeSwitch({ dark, handleChecked, checked }) {
         },
         "& + .MuiSwitch-track": {
           opacity: 1,
-          backgroundColor: dark === "dark" ? "#8796A5" : "#aab4be",
+          backgroundColor: checked ? "#8796A5" : "#aab4be",
         },
       },
     },
     "& .MuiSwitch-thumb": {
-      backgroundColor: dark === "dark" ? "#003892" : "#001e3c",
+      backgroundColor: checked ? "#f4e185" : "#001e3c",
       width: 32,
       height: 32,
       "&:before": {
@@ -51,11 +51,11 @@ export default function DarkModeSwitch({ dark, handleChecked, checked }) {
     },
     "& .MuiSwitch-track": {
       opacity: 1,
-      backgroundColor: dark === "dark" ? "#8796A5" : "#aab4be",
+      backgroundColor: checked ? "#8796A5" : "#aab4be",
       borderRadius: 20 / 2,
     },
   };
-
+  console.log("render order: ", checked);
   return (
     <Switch
       onChange={handleChecked}

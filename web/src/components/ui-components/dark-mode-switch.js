@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { myContext } from "../../../provider";
 import Switch from "@mui/material/Switch";
 import { styled } from "@mui/material/styles";
 import FormGroup from "@mui/material/FormGroup";
@@ -6,17 +7,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 
-export default function DarkModeSwitch({ handleChecked, checked }) {
-  const [isChecked, setIsChecked] = useState(checked ? true : false);
-
-  useEffect(() => {
-    setIsChecked(checked);
-  }, []);
-
-  useEffect(() => {
-    setIsChecked(checked);
-  }, [checked]);
-
+export default function DarkModeSwitch({ handleChecked, isChecked }) {
   const styles = {
     top: 7,
     margin: 0,
@@ -37,12 +28,12 @@ export default function DarkModeSwitch({ handleChecked, checked }) {
         },
         "& + .MuiSwitch-track": {
           opacity: 1,
-          backgroundColor: checked ? "#8796A5" : "#aab4be",
+          backgroundColor: isChecked ? "#8796A5" : "#aab4be",
         },
       },
     },
     "& .MuiSwitch-thumb": {
-      backgroundColor: checked ? "#f4e185" : "#001e3c",
+      backgroundColor: isChecked ? "#f4e185" : "#001e3c",
       width: 32,
       height: 32,
       "&:before": {
@@ -61,17 +52,21 @@ export default function DarkModeSwitch({ handleChecked, checked }) {
     },
     "& .MuiSwitch-track": {
       opacity: 1,
-      backgroundColor: checked ? "#8796A5" : "#aab4be",
+      backgroundColor: isChecked ? "#8796A5" : "#aab4be",
       borderRadius: 20 / 2,
     },
   };
 
   return (
-    <Switch
-      onChange={(e) => handleChecked(e)}
-      sx={styles}
-      checked={isChecked}
-      inputProps={{ "aria-label": "controlled" }}
-    />
+    <myContext.Consumer>
+      {(context) => (
+        <Switch
+          onChange={(e) => handleChecked(e)}
+          sx={styles}
+          checked={context.isChecked}
+          inputProps={{ "aria-label": "controlled" }}
+        />
+      )}
+    </myContext.Consumer>
   );
 }

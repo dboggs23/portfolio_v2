@@ -7,8 +7,8 @@ const Provider = (props) => {
   const DARK_CLASS = "dark";
 
   const handleChecked = (e) => {
-    console.log(e.target);
-    setChecked(e.target.checked);
+    console.log(e.target.checked);
+    setChecked(!isChecked);
   };
 
   const systemPrefersDark = useMediaQuery(
@@ -21,21 +21,21 @@ const Provider = (props) => {
     }
   );
 
-  const [checked, setChecked] = useState(systemPrefersDark);
+  const [isChecked, setChecked] = useState(systemPrefersDark);
 
   useEffect(() => {
-    if (checked) {
+    if (isChecked) {
       document.documentElement.classList.add(DARK_CLASS);
     } else {
       document.documentElement.classList.remove(DARK_CLASS);
     }
-  }, [checked]);
+  }, [isChecked]);
 
   return (
     <myContext.Provider
       value={{
         handleChecked,
-        checked,
+        isChecked,
       }}
     >
       {props.children}

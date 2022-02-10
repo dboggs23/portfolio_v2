@@ -38,7 +38,7 @@ const IconsContainer = styled.div`
   .interests {
     width: 50px;
     filter: ${(props) =>
-      props.checked
+      props.isChecked
         ? "invert(100%) sepia(1%) saturate(0%) hue-rotate(233deg) brightness(106%) contrast(101%)"
         : ""};
   }
@@ -60,7 +60,7 @@ const IconsContainer = styled.div`
 const Flower = styled.img`
   width: 50px;
   filter: ${(props) =>
-    props.checked
+    props.isChecked
       ? "invert(100%) sepia(1%) saturate(0%) hue-rotate(233deg) brightness(106%) contrast(101%)"
       : ""};
 `;
@@ -69,7 +69,7 @@ function InterestsIcons() {
   return (
     <myContext.Consumer>
       {(context) => (
-        <IconsContainer checked={context.checked}>
+        <IconsContainer isChecked={context.isChecked}>
           <h5>Minimalist clip art that represent my interests:</h5>
           <div className="interests-container">
             <img className="interests books" src={books} alt="A bookshelf." />
@@ -101,7 +101,7 @@ function FleurDeLis() {
     <myContext.Consumer>
       {(context) => (
         <Flower
-          checked={context.checked}
+          isChecked={context.isChecked}
           className="interests"
           src={fleur}
           alt="A fleur de lis, which symbolizes the confluence of the Missouri and Mississippi rivers north of St. Louis, Missouri."
@@ -118,11 +118,11 @@ function Links() {
         <div className="contacts">
           <SocialIcon
             url="https://www.linkedin.com/in/dalton-boggs/"
-            bgColor={context.checked ? "white" : "black"}
+            bgColor={context.isChecked ? "white" : "black"}
           />
           <SocialIcon
             url="https://github.com/dboggs23"
-            bgColor={context.checked ? "white" : "black"}
+            bgColor={context.isChecked ? "white" : "black"}
           />
         </div>
       )}

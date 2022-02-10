@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Switch from "@mui/material/Switch";
 import { styled } from "@mui/material/styles";
 import FormGroup from "@mui/material/FormGroup";
@@ -7,6 +7,16 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 
 export default function DarkModeSwitch({ handleChecked, checked }) {
+  const [isChecked, setIsChecked] = useState(checked ? true : false);
+
+  useEffect(() => {
+    setIsChecked(checked);
+  }, []);
+
+  useEffect(() => {
+    setIsChecked(checked);
+  }, [checked]);
+
   const styles = {
     top: 7,
     margin: 0,
@@ -60,7 +70,7 @@ export default function DarkModeSwitch({ handleChecked, checked }) {
     <Switch
       onChange={handleChecked}
       sx={styles}
-      checked={checked}
+      checked={isChecked}
       inputProps={{ "aria-label": "controlled" }}
     />
   );

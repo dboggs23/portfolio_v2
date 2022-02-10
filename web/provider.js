@@ -22,24 +22,14 @@ const Provider = (props) => {
   );
 
   const [checked, setChecked] = useState(systemPrefersDark);
-  console.log("in line checked status  ", checked);
+
   useEffect(() => {
-    console.log("check changed use effect  ", checked);
     if (checked) {
       document.documentElement.classList.add(DARK_CLASS);
     } else {
       document.documentElement.classList.remove(DARK_CLASS);
     }
   }, [checked]);
-
-  useEffect(() => {
-    console.log("page first ran use effect ", checked);
-    if (checked) {
-      document.documentElement.classList.add(DARK_CLASS);
-    } else {
-      document.documentElement.classList.remove(DARK_CLASS);
-    }
-  }, []);
 
   return (
     <myContext.Provider

@@ -7,7 +7,6 @@ const Provider = (props) => {
   const DARK_CLASS = "dark";
 
   const handleChecked = (e) => {
-    console.log(e.target.checked);
     setChecked(!isChecked);
   };
 

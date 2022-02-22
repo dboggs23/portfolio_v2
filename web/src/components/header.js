@@ -13,7 +13,7 @@ const Header = ({
   showNav,
   siteTitle,
   handleChecked,
-  checked,
+  isChecked,
   isDark,
 }) => {
   return (
@@ -33,7 +33,7 @@ const Header = ({
             </li>
           </ul>
         </nav>
-        <DarkModeSwitch checked={checked} handleChecked={handleChecked} />
+        {/*<DarkModeSwitch isChecked={isChecked} handleChecked={handleChecked} />*/}
       </div>
     </div>
   );

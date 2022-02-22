@@ -10,7 +10,7 @@ const Layout = ({
   onShowNav,
   showNav,
   siteTitle,
-  checked,
+  isChecked,
   handleChecked,
 }) => {
   return (
@@ -23,7 +23,7 @@ const Layout = ({
             onShowNav={onShowNav}
             showNav={showNav}
             handleChecked={context.handleChecked}
-            checked={context.checked}
+            isChecked={context.isChecked}
           />
 
           <div className={styles.content}>{children}</div>

@@ -61,9 +61,9 @@ export default function DarkModeSwitch({ handleChecked, isChecked }) {
     <myContext.Consumer>
       {(context) => (
         <Switch
-          onChange={(e) => handleChecked(e)}
+          onChange={(e) => context.handleChecked(e)}
           sx={styles}
-          checked={isChecked}
+          checked={context.isChecked}
           inputProps={{ "aria-label": "controlled" }}
         />
       )}

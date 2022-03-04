@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { Helmet } from "react-helmet";
 import Header from "./header";
 import "../styles/layout.css";
 import * as styles from "./layout.module.css";
@@ -9,6 +10,9 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
     <myContext.Consumer>
       {(context) => (
         <div>
+          <Helmet>
+            <html class={context.isChecked ? "dark" : ""} />
+          </Helmet>
           <Header
             siteTitle={siteTitle}
             onHideNav={onHideNav}

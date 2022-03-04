@@ -7,7 +7,8 @@ const Provider = (props) => {
   const DARK_CLASS = "dark";
 
   const handleChecked = (e) => {
-    setChecked(!isChecked);
+    console.log(isChecked);
+    setChecked((isChecked) => !isChecked);
   };
 
   const systemPrefersDark = useMediaQuery(
@@ -21,7 +22,7 @@ const Provider = (props) => {
   );
 
   const [isChecked, setChecked] = useState(systemPrefersDark);
-
+  console.log("is checked state: ", isChecked);
   /*useEffect(() => {
     if (isChecked) {
       document.documentElement.classList.add(DARK_CLASS);

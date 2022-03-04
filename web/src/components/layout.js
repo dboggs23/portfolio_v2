@@ -4,15 +4,7 @@ import "../styles/layout.css";
 import * as styles from "./layout.module.css";
 import { myContext } from "../../provider";
 
-const Layout = ({
-  children,
-  onHideNav,
-  onShowNav,
-  showNav,
-  siteTitle,
-  isChecked,
-  handleChecked,
-}) => {
+const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
   return (
     <myContext.Consumer>
       {(context) => (

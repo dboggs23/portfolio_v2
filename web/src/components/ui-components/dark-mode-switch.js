@@ -63,7 +63,7 @@ export default function DarkModeSwitch({ handleChecked, isChecked }) {
         <Switch
           onChange={(e) => handleChecked(e)}
           sx={styles}
-          checked={context.isChecked}
+          checked={isChecked}
           inputProps={{ "aria-label": "controlled" }}
         />
       )}

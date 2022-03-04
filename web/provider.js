@@ -14,10 +14,10 @@ const Provider = (props) => {
     {
       query: "(prefers-color-scheme: dark)",
     },
-    undefined,
+    undefined /*
     (prefersDark) => {
       setChecked(prefersDark);
-    }
+    }*/
   );
 
   const [isChecked, setChecked] = useState(systemPrefersDark);

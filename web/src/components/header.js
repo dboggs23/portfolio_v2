@@ -25,7 +25,7 @@ const Header = ({
 
         <nav>
           <ul>
-            {/*<li>
+            {/*<li>  
               <Link to="/about/">About</Link>
             </li>*/}
             <li>
@@ -33,7 +33,7 @@ const Header = ({
             </li>
           </ul>
         </nav>
-        {/*<DarkModeSwitch isChecked={isChecked} handleChecked={handleChecked} />*/}
+        <DarkModeSwitch isChecked={isChecked} handleChecked={handleChecked} />
       </div>
     </div>
   );

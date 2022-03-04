@@ -8,8 +8,6 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 
 export default function DarkModeSwitch({ handleChecked, isChecked }) {
-  const [isCheckedLocal, setIsCheckedLocal] = useState(isChecked);
-
   const styles = {
     top: 7,
     margin: 0,
@@ -30,12 +28,12 @@ export default function DarkModeSwitch({ handleChecked, isChecked }) {
         },
         "& + .MuiSwitch-track": {
           opacity: 1,
-          backgroundColor: isCheckedLocal ? "#8796A5" : "#aab4be",
+          backgroundColor: isChecked ? "#8796A5" : "#aab4be",
         },
       },
     },
     "& .MuiSwitch-thumb": {
-      backgroundColor: isCheckedLocal ? "#f4e185" : "#001e3c",
+      backgroundColor: isChecked ? "#f4e185" : "#001e3c",
       width: 32,
       height: 32,
       "&:before": {
@@ -54,7 +52,7 @@ export default function DarkModeSwitch({ handleChecked, isChecked }) {
     },
     "& .MuiSwitch-track": {
       opacity: 1,
-      backgroundColor: isCheckedLocal ? "#8796A5" : "#aab4be",
+      backgroundColor: isChecked ? "#8796A5" : "#aab4be",
       borderRadius: 20 / 2,
     },
   };
@@ -65,7 +63,7 @@ export default function DarkModeSwitch({ handleChecked, isChecked }) {
         <Switch
           onChange={(e) => handleChecked(e)}
           sx={styles}
-          checked={isCheckedLocal}
+          checked={isChecked}
           inputProps={{ "aria-label": "controlled" }}
         />
       )}

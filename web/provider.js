@@ -6,30 +6,21 @@ export const myContext = React.createContext();
 const Provider = (props) => {
   const DARK_CLASS = "dark";
 
-  const handleChecked = (e) => {
-    console.log(isChecked);
-    setChecked((isChecked) => !isChecked);
-  };
-
-  const systemPrefersDark = useMediaQuery(
+  /*const systemPrefersDark = useMediaQuery(
     {
       query: "(prefers-color-scheme: dark)",
     },
-    undefined /*
+    undefined 
     (prefersDark) => {
       setChecked(prefersDark);
-    }*/
-  );
-
-  const [isChecked, setChecked] = useState(systemPrefersDark);
-  console.log("is checked state: ", isChecked);
-  /*useEffect(() => {
-    if (isChecked) {
-      document.documentElement.classList.add(DARK_CLASS);
-    } else {
-      document.documentElement.classList.remove(DARK_CLASS);
     }
-  }, [isChecked]);*/
+  );*/
+
+  const [isChecked, setChecked] = useState(false);
+
+  const handleChecked = (e) => {
+    setChecked((isChecked) => !isChecked);
+  };
 
   return (
     <myContext.Provider

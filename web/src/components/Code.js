@@ -1,6 +1,6 @@
 import React from "react";
 
-export default ({ node }) => {
+export default Code = ({ node }) => {
   if (!node || !node.code) {
     return null;
   }

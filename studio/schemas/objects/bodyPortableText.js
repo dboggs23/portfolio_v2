@@ -44,7 +44,6 @@ export default {
               },
             ],
           },
-          { type: "code" },
         ],
       },
       of: [{ type: "authorReference" }],
@@ -56,5 +55,6 @@ export default {
       type: "mainImage",
       options: { hotspot: true },
     },
+    { type: "code" },
   ],
 };

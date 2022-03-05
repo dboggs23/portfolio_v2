@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Code = ({ node }) => {
+export const Code = ({ node = {} }) => {
   if (!node || !node.code) {
     return null;
   }

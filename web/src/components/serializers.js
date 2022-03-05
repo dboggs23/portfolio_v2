@@ -1,6 +1,6 @@
 import React from "react";
 import { Figure } from "./Figure";
-import { Code } from "./Code";
+import { Code } from "./code-block";
 
 const serializers = {
   types: {
